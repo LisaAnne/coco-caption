@@ -90,6 +90,7 @@ class COCO:
 
         cats = []
         catToImgs = []
+        if 'type' not in self.dataset: self.dataset['type'] = 'captions'
         if self.dataset['type'] == 'instances':
             cats = {cat['id']: [] for cat in self.dataset['categories']}
             for cat in self.dataset['categories']:
